@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #05070A;
+  --foreground: #F2F2F2;
+  --charcoal-950: #05070A;
+  --charcoal-900: #0B0B0D;
+  --charcoal-850: #111318;
+  --charcoal-800: #171A1F;
+  --charcoal-700: #22262E;
+  --charcoal-600: #2D323D;
+  --myth-red: #C1121F;
+  --myth-red-bright: #FF1F2D;
+  --myth-red-crimson: #E50920;
+  --myth-cyan: #00D9FF;
+  --myth-cyan-bright: #00E5FF;
+  --myth-cyan-glow: #36F5FF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #C1121F;
+  selection-color: #ffffff;
+}
+
+::selection {
+  background-color: rgba(193, 18, 31, 0.4);
+  color: #36F5FF;
+}
+
+/* Custom Cinematic Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272E;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 38, 53, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C1121F;
+}
+
+/* Sci-fi HUD / Cinematic Scanline Effects */
+.hud-scanline {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 229, 255, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+.glow-red {
+  box-shadow: 0 0 25px rgba(193, 18, 31, 0.35), inset 0 0 15px rgba(255, 38, 53, 0.15);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35), inset 0 0 15px rgba(54, 245, 255, 0.15);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 12px rgba(255, 38, 53, 0.6), 0 0 24px rgba(193, 18, 31, 0.3);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(54, 245, 255, 0.65), 0 0 24px rgba(0, 229, 255, 0.35);
+}
+
+/* Subtle Sci-Fi Grid Background */
+.tech-grid-bg {
+  background-image: radial-gradient(rgba(193, 18, 31, 0.08) 1px, transparent 0),
+                    radial-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 0);
+  background-position: 0 0, 24px 24px;
+  background-size: 48px 48px;
+}
+
+/* Glass & Card Surfaces */
+.glass-panel {
+  background: rgba(21, 21, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel-active {
+  background: rgba(29, 29, 34, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 229, 255, 0.15);
+}
