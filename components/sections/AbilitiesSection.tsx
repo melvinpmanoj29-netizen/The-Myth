@@ -55,67 +55,67 @@ export function AbilitiesSection() {
   return (
     <section
       id="abilities"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-950 border-t border-charcoal-800 overflow-hidden"
+      className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-950 border-t border-charcoal-800 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto z-10 relative">
         {/* Header */}
-        <div className="max-w-3xl mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.3em] text-myth-cyan uppercase">
-            <span className="w-8 h-[1px] bg-myth-cyan" />
+        <div className="max-w-3xl mb-10 sm:mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] sm:tracking-[0.3em] text-myth-cyan uppercase">
+            <span className="w-6 sm:w-8 h-[1px] bg-myth-cyan" />
             05 // SIGNATURE CAPABILITIES
           </div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-none">
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-none">
             POWERS BEYOND <span className="text-transparent bg-clip-text bg-gradient-to-r from-myth-cyan to-myth-red-bright">PHYSICAL FORCE</span>
           </h2>
-          <p className="text-base sm:text-lg text-text-muted font-sans leading-relaxed pt-2">
+          <p className="text-sm sm:text-lg text-text-muted font-sans leading-relaxed pt-1 sm:pt-2">
             The Myth does not rely on brute strength. His arsenal consists of four revolutionary resonance disciplines crafted to resolve deep-seated human dilemmas.
           </p>
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {abilities.map((ability) => {
             const Icon = ability.icon;
             return (
               <div
                 key={ability.id}
                 onMouseEnter={() => soundManager.playKeypress()}
-                className={`p-8 rounded-2xl bg-charcoal-800/80 border border-charcoal-700 transition-all duration-300 group ${ability.glow} flex flex-col justify-between`}
+                className={`p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-charcoal-800/80 border border-charcoal-700 transition-all duration-300 group ${ability.glow} flex flex-col justify-between`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-charcoal-900 border border-charcoal-600 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <Icon className={`w-6 h-6 ${ability.color}`} />
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-charcoal-900 border border-charcoal-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${ability.color}`} />
                       </div>
-                      <span className="px-2 py-0.5 rounded bg-charcoal-900 text-[10px] font-mono text-text-muted uppercase border border-charcoal-700">
+                      <span className="px-2 py-0.5 rounded bg-charcoal-900 text-[9px] sm:text-[10px] font-mono text-text-muted uppercase border border-charcoal-700">
                         {ability.badge}
                       </span>
                     </div>
-                    <span className="text-2xl font-mono font-black text-charcoal-600 group-hover:text-text-muted transition-colors">
+                    <span className="text-xl sm:text-2xl font-mono font-black text-charcoal-600 group-hover:text-text-muted transition-colors">
                       {ability.id}
                     </span>
                   </div>
 
-                  <h3 className="font-display font-black text-2xl text-white uppercase tracking-wide mb-1 group-hover:text-myth-cyan-bright transition-colors">
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-wide mb-1 group-hover:text-myth-cyan-bright transition-colors">
                     {ability.name}
                   </h3>
 
-                  <div className="text-sm font-mono text-myth-red-bright font-bold mb-4 tracking-wide">
+                  <div className="text-xs sm:text-sm font-mono text-myth-red-bright font-bold mb-3 sm:mb-4 tracking-wide">
                     &ldquo;{ability.tagline}&rdquo;
                   </div>
 
-                  <p className="text-sm text-text-muted leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-text-muted leading-relaxed font-sans">
                     {ability.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-charcoal-700/60 flex items-center justify-between text-xs font-mono text-text-muted">
-                  <span className="flex items-center gap-1.5 text-myth-cyan">
+                <div className="mt-6 sm:mt-8 pt-4 border-t border-charcoal-700/60 flex items-center justify-between text-xs font-mono text-text-muted">
+                  <span className="flex items-center gap-1.5 text-myth-cyan text-[11px] sm:text-xs">
                     <Activity className="w-3.5 h-3.5" />
                     RESONANCE OPTIMIZED
                   </span>
-                  <span className="uppercase text-[11px]">ACTIVE PROTOCOL</span>
+                  <span className="uppercase text-[10px] sm:text-[11px]">ACTIVE PROTOCOL</span>
                 </div>
               </div>
             );

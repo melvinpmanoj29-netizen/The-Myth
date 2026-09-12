@@ -93,33 +93,34 @@ export function OriginSection() {
   return (
     <section
       id="origin"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-950 border-t border-charcoal-800 overflow-hidden tech-grid-bg"
+      className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-950 border-t border-charcoal-800 overflow-hidden tech-grid-bg"
     >
       {/* Background Accent Gradients */}
-      <div className="absolute top-1/3 right-10 w-96 h-96 bg-myth-red/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-myth-cyan/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-myth-red/10 rounded-full blur-[120px] sm:blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-72 sm:w-96 h-72 sm:h-96 bg-myth-cyan/10 rounded-full blur-[110px] sm:blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto z-10 relative">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.3em] text-myth-red-bright uppercase">
-            <span className="w-8 h-[1px] bg-myth-red-bright" />
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] sm:tracking-[0.3em] text-myth-red-bright uppercase">
+            <span className="w-6 sm:w-8 h-[1px] bg-myth-red-bright" />
             ORIGIN ARCHIVE // DECLASSIFIED
-            <span className="w-8 h-[1px] bg-myth-red-bright" />
+            <span className="w-6 sm:w-8 h-[1px] bg-myth-red-bright" />
           </div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-none">
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-none">
             THE BIRTH OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-myth-red-bright to-myth-cyan">THE MYTH</span>
           </h2>
-          <p className="text-sm sm:text-base text-text-muted max-w-2xl mx-auto font-sans leading-relaxed">
+          <p className="text-xs sm:text-base text-text-muted max-w-2xl mx-auto font-sans leading-relaxed">
             Before the legends, there was only an athlete fighting for his life. The true story of how trauma and resonance created the world&apos;s foremost listener.
           </p>
         </div>
 
         {/* Chapter Navigation Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 mb-8 sm:mb-10">
           {chapters.map((ch, idx) => {
             const Icon = ch.icon;
             const isActive = activeChapter === idx;
+            const isLastOnTwoCols = idx === chapters.length - 1;
             return (
               <button
                 key={ch.num}
@@ -127,7 +128,9 @@ export function OriginSection() {
                   soundManager.playKeypress();
                   setActiveChapter(idx);
                 }}
-                className={`p-3.5 rounded border text-left transition-all duration-200 flex flex-col justify-between gap-2 ${
+                className={`p-3 sm:p-3.5 rounded border text-left transition-all duration-200 flex flex-col justify-between gap-2 active:scale-95 ${
+                  isLastOnTwoCols ? "col-span-2 sm:col-span-1" : ""
+                } ${
                   isActive
                     ? "bg-charcoal-900 border-myth-red-bright shadow-[0_0_20px_rgba(193,18,31,0.3)] text-white"
                     : "bg-charcoal-900/40 border-charcoal-700/80 text-text-muted hover:border-charcoal-600 hover:text-text-primary"
@@ -139,7 +142,7 @@ export function OriginSection() {
                   </span>
                   <Icon className={`w-4 h-4 ${isActive ? "text-myth-red-bright" : "text-text-muted"}`} />
                 </div>
-                <div className="font-mono text-[11px] font-bold tracking-wider uppercase truncate">
+                <div className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase truncate">
                   {ch.tag}
                 </div>
               </button>
@@ -148,15 +151,15 @@ export function OriginSection() {
         </div>
 
         {/* Active Chapter Showcase Box */}
-        <div className="p-6 sm:p-10 rounded-xl bg-charcoal-900/90 border border-charcoal-700/90 shadow-[0_20px_50px_rgba(0,0,0,0.85)] relative overflow-hidden backdrop-blur-md">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-charcoal-800">
+        <div className="p-4 sm:p-6 md:p-10 rounded-xl bg-charcoal-900/90 border border-charcoal-700/90 shadow-[0_20px_50px_rgba(0,0,0,0.85)] relative overflow-hidden backdrop-blur-md">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-charcoal-800">
             <div>
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-myth-cyan tracking-widest uppercase mb-1">
                 <span>CHAPTER {chapters[activeChapter].num}</span>
                 <span className="text-charcoal-600">&bull;</span>
                 <span className="text-myth-red-bright">{chapters[activeChapter].tag}</span>
               </div>
-              <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight">
+              <h3 className="font-display font-black text-xl sm:text-3xl text-white uppercase tracking-tight">
                 {chapters[activeChapter].title}
               </h3>
               <p className="text-xs sm:text-sm font-mono text-text-muted">
@@ -164,14 +167,14 @@ export function OriginSection() {
               </p>
             </div>
 
-            <div className="px-4 py-2 rounded bg-charcoal-950 border border-charcoal-700 text-xs font-mono text-myth-cyan flex items-center gap-2 flex-shrink-0">
+            <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded bg-charcoal-950 border border-charcoal-700 text-[11px] sm:text-xs font-mono text-myth-cyan flex items-center gap-2 flex-shrink-0 self-start sm:self-auto">
               <Sparkles className="w-3.5 h-3.5 text-myth-cyan animate-pulse" />
               <span>RECORD ARCHIVED</span>
             </div>
           </div>
 
           {/* Chapter Paragraphs */}
-          <div className="py-6 space-y-4 text-sm sm:text-base text-text-muted font-sans leading-relaxed">
+          <div className="py-5 sm:py-6 space-y-3.5 sm:space-y-4 text-xs sm:text-base text-text-muted font-sans leading-relaxed">
             {chapters[activeChapter].content.map((p, pIdx) => (
               <p key={pIdx} className="text-text-primary/90">
                 {p}
@@ -180,7 +183,7 @@ export function OriginSection() {
           </div>
 
           {/* Key Insight Highlight */}
-          <div className="mt-4 p-4 rounded-lg bg-charcoal-950/80 border-l-2 border-myth-red-bright flex items-center justify-between">
+          <div className="mt-2 sm:mt-4 p-3.5 sm:p-4 rounded-lg bg-charcoal-950/80 border-l-2 border-myth-red-bright flex items-center justify-between">
             <span className="font-mono text-xs sm:text-sm text-myth-red-bright font-semibold">
               &ldquo;{chapters[activeChapter].highlight}&rdquo;
             </span>
@@ -191,19 +194,19 @@ export function OriginSection() {
         </div>
 
         {/* The Myth's Core Philosophy Banner */}
-        <div className="mt-12 p-8 sm:p-10 rounded-xl bg-gradient-to-r from-charcoal-900 via-charcoal-900/90 to-charcoal-950 border border-myth-red/50 shadow-[0_0_30px_rgba(193,18,31,0.2)] text-center relative overflow-hidden">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <div className="text-[11px] font-mono tracking-[0.25em] text-myth-cyan uppercase">
+        <div className="mt-8 sm:mt-12 p-6 sm:p-10 rounded-xl bg-gradient-to-r from-charcoal-900 via-charcoal-900/90 to-charcoal-950 border border-myth-red/50 shadow-[0_0_30px_rgba(193,18,31,0.2)] text-center relative overflow-hidden">
+          <div className="max-w-2xl mx-auto space-y-3 sm:space-y-4">
+            <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.2em] sm:tracking-[0.25em] text-myth-cyan uppercase">
               HIS PHILOSOPHY
             </div>
-            <blockquote className="font-display font-black text-lg sm:text-2xl text-white leading-snug">
+            <blockquote className="font-display font-black text-base sm:text-2xl text-white leading-snug">
               &ldquo;They tried to turn me into a weapon.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-myth-red-bright via-white to-myth-cyan">
                 They forgot that the strongest thing inside a human being isn&apos;t power. It&apos;s the will to keep going.&rdquo;
               </span>
             </blockquote>
-            <div className="pt-2 flex items-center justify-center gap-4 text-xs font-mono text-text-muted uppercase tracking-widest">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10px] sm:text-xs font-mono text-text-muted uppercase tracking-widest">
               <span>LISTEN</span>
               <span>&bull;</span>
               <span>UNDERSTAND</span>

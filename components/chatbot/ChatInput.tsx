@@ -86,7 +86,7 @@ export function ChatInput({
             onChange={handleChange}
             placeholder={getPlaceholder(currentStep)}
             disabled={disabled || isModalActive}
-            className="w-full bg-charcoal-950 border border-charcoal-700/90 focus:border-myth-cyan focus:ring-1 focus:ring-myth-cyan/40 text-text-primary placeholder:text-text-muted/50 text-xs sm:text-sm rounded px-4 py-3 outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed font-sans"
+            className="w-full bg-charcoal-950 border border-charcoal-700/90 focus:border-myth-cyan focus:ring-1 focus:ring-myth-cyan/40 text-text-primary placeholder:text-text-muted/50 text-base sm:text-sm rounded px-3.5 sm:px-4 py-2.5 sm:py-3 outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed font-sans"
           />
         </div>
 
@@ -94,7 +94,7 @@ export function ChatInput({
           type="submit"
           disabled={!value.trim() || disabled || isModalActive}
           aria-label="Send message to The Myth"
-          className="w-11 h-11 rounded bg-myth-red hover:bg-myth-red-bright text-white disabled:opacity-40 disabled:hover:bg-myth-red transition-all duration-200 border border-myth-red-bright/60 shadow-[0_0_15px_rgba(193,18,31,0.4)] hover:shadow-[0_0_22px_rgba(255,31,45,0.7)] flex items-center justify-center flex-shrink-0 active:scale-95"
+          className="w-11 h-11 min-w-[44px] min-h-[44px] rounded bg-myth-red hover:bg-myth-red-bright text-white disabled:opacity-40 disabled:hover:bg-myth-red transition-all duration-200 border border-myth-red-bright/60 shadow-[0_0_15px_rgba(193,18,31,0.4)] hover:shadow-[0_0_22px_rgba(255,31,45,0.7)] flex items-center justify-center flex-shrink-0 active:scale-95"
         >
           <Send className="w-4 h-4 text-white fill-white" />
         </button>

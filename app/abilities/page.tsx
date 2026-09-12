@@ -170,36 +170,36 @@ export default function AbilitiesPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 border-b border-charcoal-800 overflow-hidden tech-grid-bg">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 border-b border-charcoal-800 overflow-hidden tech-grid-bg">
         {/* Ambient Glows */}
-        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[500px] h-[500px] bg-myth-cyan/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-myth-red/10 rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-myth-cyan/10 rounded-full blur-[110px] sm:blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-myth-red/10 rounded-full blur-[120px] sm:blur-[160px] pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto relative z-10 space-y-6 text-left">
+        <div className="max-w-6xl mx-auto relative z-10 space-y-4 sm:space-y-6 text-left">
           {/* Back to Base Link */}
           <Link
             href="/"
             onClick={() => soundManager.playKeypress()}
-            className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-text-muted hover:text-myth-cyan uppercase transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-text-muted hover:text-myth-cyan uppercase transition-colors py-1"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             RETURN TO COMMAND CENTER
           </Link>
 
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-charcoal-900 border border-myth-cyan/40 text-[11px] font-mono text-myth-cyan tracking-widest uppercase shadow-sm">
-              <Activity className="w-3.5 h-3.5 text-myth-cyan animate-pulse" />
-              CAPABILITIES & RESONANCE MATRIX // DECLASSIFIED
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-charcoal-900 border border-myth-cyan/40 text-[10px] sm:text-[11px] font-mono text-myth-cyan tracking-widest uppercase shadow-sm">
+              <Activity className="w-3.5 h-3.5 text-myth-cyan animate-pulse flex-shrink-0" />
+              CAPABILITIES // DECLASSIFIED
             </div>
 
-            <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-white leading-none">
+            <h1 className="font-display font-black text-3xl sm:text-6xl md:text-7xl uppercase tracking-tight text-white leading-none">
               POWERS BEYOND <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-myth-cyan via-white to-myth-red-bright">
                 PHYSICAL FORCE
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base text-text-muted font-sans max-w-2xl leading-relaxed pt-2">
+            <p className="text-xs sm:text-base text-text-muted font-sans max-w-2xl leading-relaxed pt-1 sm:pt-2">
               The Myth does not rely on weapons or brute destruction. His power lies in an extraordinary synergy of athletic physical conditioning, neurological energy resonance, and an unshakeable capacity for radical empathy.
             </p>
           </div>
@@ -207,11 +207,11 @@ export default function AbilitiesPage() {
       </section>
 
       {/* Main Interactive Matrix */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Left Column: Ability Selector List */}
-          <div className="lg:col-span-5 space-y-3">
+          <div className="lg:col-span-5 space-y-2.5 sm:space-y-3">
             <div className="text-xs font-mono font-bold tracking-widest text-text-muted uppercase px-1 mb-2 flex items-center justify-between">
               <span>SELECT DISCIPLINE</span>
               <span className="text-myth-cyan font-semibold">6 ARCHIVED</span>
@@ -227,40 +227,40 @@ export default function AbilitiesPage() {
                     soundManager.playKeypress();
                     setSelectedAbility(idx);
                   }}
-                  className={`w-full p-4 rounded-lg border text-left transition-all duration-200 flex items-center justify-between gap-4 ${
+                  className={`w-full p-3 sm:p-4 rounded-lg border text-left transition-all duration-200 flex items-center justify-between gap-3 sm:gap-4 active:scale-98 ${
                     isSelected
-                      ? "bg-charcoal-900 border-myth-cyan shadow-[0_0_20px_rgba(0,217,255,0.25)] scale-[1.02]"
+                      ? "bg-charcoal-900 border-myth-cyan shadow-[0_0_20px_rgba(0,217,255,0.25)] scale-[1.01] sm:scale-[1.02]"
                       : "bg-charcoal-900/40 border-charcoal-800 hover:border-charcoal-700 hover:bg-charcoal-900/80 text-text-muted"
                   }`}
                 >
-                  <div className="flex items-center gap-3.5">
+                  <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
                     <div
-                      className={`w-10 h-10 rounded border flex items-center justify-center flex-shrink-0 ${
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded border flex items-center justify-center flex-shrink-0 ${
                         isSelected
                           ? "border-myth-cyan bg-charcoal-950 text-myth-cyan"
                           : "border-charcoal-700 bg-charcoal-900 text-text-muted"
                       }`}
                     >
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
 
-                    <div>
-                      <div className="flex items-center gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5 sm:gap-2">
                         <span className="text-[10px] font-mono font-bold text-myth-cyan tracking-wider">
                           {ab.id}
                         </span>
-                        <span className="text-[10px] font-mono text-text-muted uppercase">
+                        <span className="text-[9px] sm:text-[10px] font-mono text-text-muted uppercase truncate">
                           {ab.category}
                         </span>
                       </div>
-                      <div className={`font-display font-black text-sm uppercase tracking-wide ${isSelected ? "text-white" : "text-text-primary"}`}>
+                      <div className={`font-display font-black text-xs sm:text-sm uppercase tracking-wide truncate ${isSelected ? "text-white" : "text-text-primary"}`}>
                         {ab.name}
                       </div>
                     </div>
                   </div>
 
                   <div className="text-right flex-shrink-0">
-                    <span className={`text-xs font-mono font-bold ${isSelected ? "text-myth-cyan" : "text-text-muted"}`}>
+                    <span className={`text-[11px] sm:text-xs font-mono font-bold ${isSelected ? "text-myth-cyan" : "text-text-muted"}`}>
                       {ab.powerLevel}%
                     </span>
                   </div>
@@ -270,11 +270,11 @@ export default function AbilitiesPage() {
           </div>
 
           {/* Right Column: Deep Dossier Showcase Card */}
-          <div className="lg:col-span-7">
-            <div className={`p-6 sm:p-10 rounded-xl bg-charcoal-900/90 border ${current.border} ${current.glow} relative overflow-hidden backdrop-blur-md space-y-6 text-left`}>
+          <div className="lg:col-span-7" id="ability-dossier">
+            <div className={`p-4 sm:p-6 md:p-10 rounded-xl bg-charcoal-900/90 border ${current.border} ${current.glow} relative overflow-hidden backdrop-blur-md space-y-5 sm:space-y-6 text-left`}>
               
               {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-charcoal-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-charcoal-800">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-xs font-mono font-bold text-myth-cyan tracking-widest uppercase">
                     <CurrentIcon className="w-4 h-4 text-myth-cyan animate-pulse" />
@@ -283,7 +283,7 @@ export default function AbilitiesPage() {
                     <span className="text-myth-red-bright">{current.category}</span>
                   </div>
 
-                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-white uppercase tracking-tight">
+                  <h2 className="font-display font-black text-xl sm:text-3xl md:text-4xl text-white uppercase tracking-tight">
                     {current.name}
                   </h2>
 
@@ -293,38 +293,38 @@ export default function AbilitiesPage() {
                 </div>
 
                 {/* Level Gauge */}
-                <div className="bg-charcoal-950 border border-charcoal-700 p-3 rounded text-center flex-shrink-0">
-                  <div className="text-[10px] font-mono text-text-muted uppercase">SYNAPSE LOCK</div>
-                  <div className="text-xl font-mono font-black text-myth-cyan">{current.powerLevel}%</div>
+                <div className="bg-charcoal-950 border border-charcoal-700 p-2.5 sm:p-3 rounded text-center flex-shrink-0 self-start sm:self-auto">
+                  <div className="text-[9px] sm:text-[10px] font-mono text-text-muted uppercase">SYNAPSE LOCK</div>
+                  <div className="text-lg sm:text-xl font-mono font-black text-myth-cyan">{current.powerLevel}%</div>
                 </div>
               </div>
 
               {/* Energy Type Tag */}
-              <div className="flex items-center gap-2 text-xs font-mono text-text-muted">
-                <span className="text-text-muted/60 uppercase">Energy Classification:</span>
-                <span className="text-white font-bold">{current.energyType}</span>
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-mono text-text-muted">
+                <span className="text-text-muted/60 uppercase text-[11px] sm:text-xs">Energy Classification:</span>
+                <span className="text-white font-bold text-[11px] sm:text-xs">{current.energyType}</span>
               </div>
 
               {/* Full Description */}
-              <div className="space-y-3">
-                <h3 className="text-xs font-mono font-bold tracking-widest text-text-muted uppercase">
+              <div className="space-y-2 sm:space-y-3">
+                <h3 className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-text-muted uppercase">
                   OPERATIONAL OVERVIEW
                 </h3>
-                <p className="text-sm sm:text-base text-text-primary/90 font-sans leading-relaxed">
+                <p className="text-xs sm:text-base text-text-primary/90 font-sans leading-relaxed">
                   {current.description}
                 </p>
               </div>
 
               {/* Key Mechanics */}
-              <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-mono font-bold tracking-widest text-text-muted uppercase">
+              <div className="space-y-2 sm:space-y-3 pt-1 sm:pt-2">
+                <h3 className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-text-muted uppercase">
                   TACTICAL MECHANICS & APPLICATIONS
                 </h3>
                 <div className="space-y-2">
                   {current.mechanics.map((mech, mIdx) => (
                     <div
                       key={mIdx}
-                      className="p-3 rounded bg-charcoal-950/80 border border-charcoal-800 text-xs sm:text-sm text-text-muted flex items-start gap-2.5 font-sans"
+                      className="p-2.5 sm:p-3 rounded bg-charcoal-950/80 border border-charcoal-800 text-xs sm:text-sm text-text-muted flex items-start gap-2.5 font-sans"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-myth-cyan mt-1.5 flex-shrink-0" />
                       <span>{mech}</span>
@@ -334,23 +334,23 @@ export default function AbilitiesPage() {
               </div>
 
               {/* Philosophical Quote */}
-              <div className="pt-4 border-t border-charcoal-800">
-                <blockquote className="text-xs sm:text-sm font-sans italic text-text-muted border-l-2 border-myth-red-bright pl-3.5 py-1">
+              <div className="pt-3 sm:pt-4 border-t border-charcoal-800">
+                <blockquote className="text-xs sm:text-sm font-sans italic text-text-muted border-l-2 border-myth-red-bright pl-3 sm:pl-3.5 py-1">
                   &ldquo;{current.quote}&rdquo;
                 </blockquote>
               </div>
 
               {/* Terminal Action Trigger */}
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="text-xs font-mono text-text-muted flex items-center gap-2">
-                  <Lock className="w-3.5 h-3.5 text-myth-cyan" />
-                  <span>ALL CAPABILITIES ARCHIVED & MONITORED</span>
+              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="text-[11px] sm:text-xs font-mono text-text-muted flex items-center gap-2 justify-center sm:justify-start">
+                  <Lock className="w-3.5 h-3.5 text-myth-cyan flex-shrink-0" />
+                  <span>ALL CAPABILITIES MONITORED</span>
                 </div>
 
                 <Link
                   href="/#summon"
                   onClick={() => soundManager.playTransmissionSend()}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded bg-myth-red hover:bg-myth-red-bright text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 shadow-[0_0_20px_rgba(193,18,31,0.5)] active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded bg-myth-red hover:bg-myth-red-bright text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 shadow-[0_0_20px_rgba(193,18,31,0.5)] active:scale-95 text-center"
                 >
                   <span>SUMMON THE MYTH</span>
                   <ArrowRight className="w-3.5 h-3.5" />

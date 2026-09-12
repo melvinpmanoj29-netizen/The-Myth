@@ -35,28 +35,28 @@ export function WhoIsTheMyth() {
   return (
     <section
       id="who-is-myth"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-950 border-t border-charcoal-800 overflow-hidden"
+      className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-950 border-t border-charcoal-800 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto z-10 relative">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.3em] text-myth-cyan uppercase">
-            <span className="w-8 h-[1px] bg-myth-cyan" />
+        <div className="max-w-3xl mb-10 sm:mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] sm:tracking-[0.3em] text-myth-cyan uppercase">
+            <span className="w-6 sm:w-8 h-[1px] bg-myth-cyan" />
             03 // IDENTITY DOSSIER
           </div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-none">
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-none">
             WHO IS <span className="text-transparent bg-clip-text bg-gradient-to-r from-myth-cyan to-white">THE MYTH?</span>
           </h2>
-          <p className="text-base sm:text-lg text-text-muted font-sans leading-relaxed pt-2">
+          <p className="text-sm sm:text-lg text-text-muted font-sans leading-relaxed pt-1 sm:pt-2">
             The Myth is an original superhero whose defining power is understanding people at their core — seeing through words, masks, and defenses to address the true problem beneath the problem.
           </p>
         </div>
 
         {/* Core Philosophy & Character Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Portrait Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-lg overflow-hidden border border-charcoal-600 bg-charcoal-800 p-2.5 shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
+          <div className="lg:col-span-5 relative max-w-md mx-auto lg:max-w-none w-full">
+            <div className="relative rounded-lg overflow-hidden border border-charcoal-600 bg-charcoal-800 p-2 sm:p-2.5 shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
               <div className="relative w-full aspect-[4/5] sm:aspect-square rounded overflow-hidden">
                 <Image
                   src="/images/the-myth-section.jpg"
@@ -68,8 +68,8 @@ export function WhoIsTheMyth() {
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-transparent to-transparent opacity-60" />
               </div>
 
-              <div className="p-4 space-y-1.5">
-                <div className="flex items-center justify-between">
+              <div className="p-3 sm:p-4 space-y-1.5">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-xs font-mono text-myth-cyan font-bold tracking-wider uppercase">
                     NAME: UNKNOWN / &ldquo;THE MYTH&rdquo;
                   </span>
@@ -77,7 +77,7 @@ export function WhoIsTheMyth() {
                     CLASS: EMPATHIC ARCHON
                   </span>
                 </div>
-                <p className="text-xs text-text-muted font-mono">
+                <p className="text-[11px] sm:text-xs text-text-muted font-mono">
                   Signature: Layered Cyan Hair &bull; Crimson Geometric Marking &bull; Tactical Chassis
                 </p>
               </div>
@@ -85,27 +85,27 @@ export function WhoIsTheMyth() {
           </div>
 
           {/* Right Column: Traits Grid */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="p-6 rounded-lg bg-charcoal-800/70 border border-charcoal-700/80 backdrop-blur-md">
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white mb-2 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-myth-cyan" />
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+            <div className="p-5 sm:p-6 rounded-lg bg-charcoal-800/70 border border-charcoal-700/80 backdrop-blur-md">
+              <h3 className="font-display font-bold text-lg sm:text-2xl text-white mb-2 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-myth-cyan flex-shrink-0" />
                 The Philosophy of Resonance
               </h3>
-              <p className="text-sm sm:text-base text-text-muted leading-relaxed">
+              <p className="text-xs sm:text-base text-text-muted leading-relaxed">
                 &ldquo;Physical wounds heal in time, but ignored voices fester into catastrophic breaking points. To save a person, you must first have the courage to listen to the truth they are terrified to say out loud.&rdquo;
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {traits.map((trait) => {
                 const Icon = trait.icon;
                 return (
                   <div
                     key={trait.title}
-                    className={`p-5 rounded-lg bg-charcoal-800/40 border ${trait.border} hover:bg-charcoal-800/90 transition-all duration-300 group`}
+                    className={`p-4 sm:p-5 rounded-lg bg-charcoal-800/40 border ${trait.border} hover:bg-charcoal-800/90 transition-all duration-300 group`}
                   >
-                    <Icon className={`w-6 h-6 ${trait.accent} mb-3 group-hover:scale-110 transition-transform`} />
-                    <h4 className="font-mono font-bold text-xs sm:text-sm text-text-primary tracking-wider uppercase mb-2">
+                    <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${trait.accent} mb-2.5 sm:mb-3 group-hover:scale-110 transition-transform`} />
+                    <h4 className="font-mono font-bold text-xs sm:text-sm text-text-primary tracking-wider uppercase mb-1.5 sm:mb-2">
                       {trait.title}
                     </h4>
                     <p className="text-xs text-text-muted leading-relaxed font-sans">

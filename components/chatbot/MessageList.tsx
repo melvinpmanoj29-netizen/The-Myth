@@ -98,14 +98,14 @@ export function MessageList({ messages, isThinking }: MessageListProps) {
 
               {/* Message Bubble */}
               <div
-                className={`max-w-[85%] sm:max-w-[80%] rounded p-3.5 relative ${
+                className={`max-w-[88%] sm:max-w-[80%] rounded p-3 sm:p-3.5 relative break-words ${
                   isMyth
                     ? "bg-charcoal-900/95 border border-charcoal-700 text-text-primary border-l-2 border-l-myth-cyan shadow-[0_4px_16px_rgba(0,0,0,0.5)]"
                     : "bg-myth-red/20 border border-myth-red-bright/50 text-white border-r-2 border-r-myth-red-bright shadow-[0_4px_16px_rgba(193,18,31,0.25)]"
                 }`}
               >
                 {/* Speaker Header & Timestamp */}
-                <div className="flex items-center justify-between gap-4 mb-1.5 pb-1 border-b border-white/5">
+                <div className="flex items-center justify-between gap-2 sm:gap-4 mb-1.5 pb-1 border-b border-white/5">
                   <span
                     className={`text-[10px] font-mono font-bold tracking-wider uppercase flex items-center gap-1.5 ${
                       isMyth ? "text-myth-cyan" : "text-myth-red-bright"
@@ -118,7 +118,7 @@ export function MessageList({ messages, isThinking }: MessageListProps) {
                 </div>
 
                 {/* Message Body */}
-                <div className="text-xs sm:text-sm leading-relaxed whitespace-pre-line font-sans font-normal text-text-primary">
+                <div className="text-xs sm:text-sm leading-relaxed whitespace-pre-line font-sans font-normal text-text-primary break-words">
                   {msg.text}
                 </div>
               </div>

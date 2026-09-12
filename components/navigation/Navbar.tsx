@@ -118,8 +118,9 @@ export function Navbar() {
                 soundManager.playKeypress();
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
-              aria-label="Toggle navigation menu"
-              className="p-2 rounded border border-charcoal-700 bg-charcoal-850 text-text-primary hover:text-myth-cyan focus:outline-none"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileMenuOpen}
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded border border-charcoal-700 bg-charcoal-850 text-text-primary hover:text-myth-cyan active:scale-95 focus:outline-none"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -127,38 +128,46 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Backdrop & Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-charcoal-950/98 backdrop-blur-xl border-b border-charcoal-700 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
-          <div className="pb-3 border-b border-charcoal-800 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs font-mono text-myth-cyan">
-              <span className="w-2 h-2 rounded-full bg-myth-cyan animate-pulse" />
-              SIGNAL: ACTIVE (MYTH-01)
+        <>
+          <div
+            className="fixed inset-0 top-[60px] bg-black/70 backdrop-blur-sm z-30 lg:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <div className="relative z-40 lg:hidden bg-charcoal-950/98 backdrop-blur-xl border-b border-charcoal-700 px-5 sm:px-6 py-5 space-y-4 max-h-[calc(100vh-4.5rem)] overflow-y-auto animate-in slide-in-from-top duration-200">
+            <div className="pb-3 border-b border-charcoal-800 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-xs font-mono text-myth-cyan">
+                <span className="w-2 h-2 rounded-full bg-myth-cyan animate-pulse" />
+                SIGNAL: ACTIVE (MYTH-01)
+              </div>
+              <span className="text-[10px] font-mono text-text-muted uppercase">FREQUENCY SECURE</span>
+            </div>
+            <div className="flex flex-col space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className="text-sm font-mono tracking-widest text-text-muted hover:text-white py-3 uppercase border-b border-charcoal-850 transition-colors flex items-center justify-between"
+                >
+                  <span>{link.name}</span>
+                  <span className="text-charcoal-600 text-xs">→</span>
+                </Link>
+              ))}
+            </div>
+            <div className="pt-2">
+              <a
+                href="#summon"
+                onClick={handleLinkClick}
+                className="flex items-center justify-center gap-2 w-full py-3.5 text-xs font-mono font-bold tracking-wider uppercase text-white bg-myth-red hover:bg-myth-red-bright rounded border border-myth-red-bright/50 shadow-[0_0_20px_rgba(193,18,31,0.5)] active:scale-95 cursor-pointer"
+              >
+                <Zap className="w-4 h-4 text-white fill-white" />
+                SUMMON THE MYTH
+              </a>
             </div>
           </div>
-          <div className="flex flex-col space-y-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={handleLinkClick}
-                className="text-sm font-mono tracking-widest text-text-muted hover:text-white py-2 uppercase border-b border-charcoal-800/60 transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-          <div className="pt-2">
-            <a
-              href="#summon"
-              onClick={handleLinkClick}
-              className="flex items-center justify-center gap-2 w-full py-3 text-xs font-mono font-bold tracking-wider uppercase text-white bg-myth-red hover:bg-myth-red-bright rounded border border-myth-red-bright/50 shadow-[0_0_20px_rgba(193,18,31,0.5)]"
-            >
-              <Zap className="w-4 h-4 text-white fill-white" />
-              SUMMON THE MYTH
-            </a>
-          </div>
-        </div>
+        </>
       )}
     </header>
   );

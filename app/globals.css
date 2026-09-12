@@ -33,6 +33,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
   selection-background-color: #C1121F;
   selection-color: #ffffff;
 }
