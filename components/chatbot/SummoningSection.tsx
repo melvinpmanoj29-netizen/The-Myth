@@ -343,7 +343,6 @@ export function SummoningSection() {
                       alt="The Myth Avatar"
                       fill
                       sizes="36px"
-                      priority
                       className="object-cover"
                     />
                   </div>
@@ -402,7 +401,6 @@ export function SummoningSection() {
                     alt="The Myth Avatar"
                     fill
                     sizes="160px"
-                    priority
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent pointer-events-none" />

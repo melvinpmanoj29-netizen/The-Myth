@@ -35,7 +35,7 @@ export function MissionSection() {
       {/* Cinematic Background Backdrop Simulation */}
       <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
         <Image
-          src="/images/the-myth-mission.jpg"
+          src="/images/myth_footer.png"
           alt="The Myth Overlooking Futuristic City Under Red Moon"
           fill
           sizes="100vw"

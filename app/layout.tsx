@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     siteName: "The Myth Portal",
     images: [
       {
-        url: "/images/the-myth-hero.jpg",
-        width: 1200,
-        height: 675,
+        url: "/images/myth_hero.png",
+        width: 1654,
+        height: 951,
         alt: "The Myth — The One Who Listens",
       },
     ],
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Myth — Someone Is Listening",
     description: "Summon The Myth. Tell your story. Be heard.",
-    images: ["/images/the-myth-hero.jpg"],
+    images: ["/images/myth_hero.png"],
   },
   icons: {
     icon: "/favicon.ico",

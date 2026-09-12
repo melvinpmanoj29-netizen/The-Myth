@@ -72,7 +72,6 @@ export function ChatbotHUD({
               alt="The Myth Avatar"
               fill
               sizes="48px"
-              priority
               className="object-cover"
             />
             {/* Live status dot on avatar */}
