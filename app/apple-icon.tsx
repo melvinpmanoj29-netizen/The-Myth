@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
 
 export const size = {
-  width: 32,
-  height: 32,
+  width: 180,
+  height: 180,
 };
 export const contentType = "image/png";
 
-export default function Icon() {
+export default function AppleIcon() {
   return new ImageResponse(
     (
       <div
@@ -17,13 +17,13 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#08080A",
-          borderRadius: "7px",
-          border: "1.5px solid #FF2635",
+          borderRadius: "36px",
+          border: "4px solid #FF2635",
         }}
       >
         <svg
-          width="24"
-          height="24"
+          width="130"
+          height="130"
           viewBox="0 0 100 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
